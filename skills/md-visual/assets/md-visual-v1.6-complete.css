@@ -1,0 +1,170 @@
+/* md-visual V1.6 COMPLETE: V1.5 neutral cards + V1.6 Mermaid nodes. */
+/* md-visual V1.5 | Neutral document system | Obsidian CSS snippet */
+/* Supports existing v1.3 and v1.4 notes without changing their content. */
+.wd-visual, .wd-visual-v14 {
+  --wd-neutral-bg: #f7f8f9;
+  --wd-neutral-header: #f1f2f4;
+  --wd-neutral-border: #d9dde2;
+  --wd-neutral-rule: #e4e7eb;
+  --wd-neutral-title: #343b45;
+  --wd-neutral-copy: #424953;
+}
+
+/* One quiet shape for individually framed cards and grouped cards. */
+.wd-visual .callout[data-callout="wd-card"],
+.wd-visual .callout[data-callout="wd-group"],
+.wd-visual-v14 .callout[data-callout="wd-card"],
+.wd-visual-v14 .callout[data-callout="wd-group"] {
+  --callout-color: 75, 82, 92;
+  background: var(--wd-neutral-bg) !important;
+  border: 1px solid var(--wd-neutral-border) !important;
+  border-radius: 7px !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 11px 0 13px !important;
+}
+
+.wd-visual .callout[data-callout="wd-card"] > .callout-title,
+.wd-visual .callout[data-callout="wd-group"] > .callout-title,
+.wd-visual-v14 .callout[data-callout="wd-card"] > .callout-title,
+.wd-visual-v14 .callout[data-callout="wd-group"] > .callout-title {
+  background: var(--wd-neutral-header) !important;
+  color: var(--wd-neutral-title) !important;
+  border-bottom: 1px solid var(--wd-neutral-rule) !important;
+  padding: 10px 14px !important;
+  font-weight: 620 !important;
+  font-size: 0.95em !important;
+  line-height: 1.45;
+}
+
+.wd-visual .callout[data-callout="wd-card"] .callout-icon,
+.wd-visual .callout[data-callout="wd-group"] .callout-icon,
+.wd-visual-v14 .callout[data-callout="wd-card"] .callout-icon,
+.wd-visual-v14 .callout[data-callout="wd-group"] .callout-icon {
+  display: none !important;
+}
+
+.wd-visual .callout[data-callout="wd-card"] > .callout-content,
+.wd-visual .callout[data-callout="wd-group"] > .callout-content,
+.wd-visual-v14 .callout[data-callout="wd-card"] > .callout-content,
+.wd-visual-v14 .callout[data-callout="wd-group"] > .callout-content {
+  background: var(--wd-neutral-bg) !important;
+  color: var(--wd-neutral-copy) !important;
+  padding: 11px 14px 12px !important;
+}
+
+.wd-visual .callout[data-callout="wd-card"] .callout-content p,
+.wd-visual .callout[data-callout="wd-group"] .callout-content p,
+.wd-visual-v14 .callout[data-callout="wd-card"] .callout-content p,
+.wd-visual-v14 .callout[data-callout="wd-group"] .callout-content p {
+  margin: 4px 0 !important;
+  line-height: 1.65;
+}
+
+.wd-visual .callout[data-callout="wd-group"] .callout-content strong,
+.wd-visual-v14 .callout[data-callout="wd-group"] .callout-content strong {
+  color: var(--wd-neutral-title) !important;
+}
+
+.wd-visual .callout[data-callout="wd-group"] .callout-content hr,
+.wd-visual-v14 .callout[data-callout="wd-group"] .callout-content hr {
+  border: 0 !important;
+  border-top: 1px solid var(--wd-neutral-rule) !important;
+  margin: 11px -14px !important;
+}
+
+/* Code tokens and tables follow the same neutral palette. */
+.wd-visual .callout code,
+.wd-visual-v14 .callout code {
+  background: #eceef1 !important;
+  color: #38414d !important;
+  border-radius: 4px !important;
+}
+.wd-visual table th,
+.wd-visual-v14 table th {
+  background: #f1f2f4 !important;
+  color: #343b45 !important;
+  border-color: #d9dde2 !important;
+}
+.wd-visual table td,
+.wd-visual-v14 table td {
+  border-color: #e0e3e7 !important;
+}
+.wd-visual .mermaid,
+.wd-visual-v14 .mermaid {
+  background: #f8f9fa !important;
+  border-color: #e0e3e7 !important;
+  border-radius: 7px !important;
+}
+
+/* md-visual V1.6: Mermaid nodes only. Enable after V1.5 neutral cards. */
+/* Scope: W-Discovery visual-test notes (V1.3/V1.4). */
+
+.wd-visual .mermaid .node rect,
+.wd-visual-v14 .mermaid .node rect,
+.wd-visual .mermaid .node polygon,
+.wd-visual-v14 .mermaid .node polygon,
+.wd-visual .mermaid .node .label-container,
+.wd-visual-v14 .mermaid .node .label-container {
+  stroke: none !important;
+  stroke-width: 0 !important;
+  fill-opacity: 0.55 !important;
+}
+
+/* Rectangular nodes use a consistent 3px radius; decision diamonds retain shape. */
+.wd-visual .mermaid .node rect,
+.wd-visual-v14 .mermaid .node rect {
+  rx: 3px !important;
+  ry: 3px !important;
+}
+
+/* A neutral base plus purposeful, saturated semantic hues. */
+.wd-visual .mermaid .node.default rect,
+.wd-visual-v14 .mermaid .node.default rect,
+.wd-visual .mermaid .node:not(.accent):not(.input):not(.ai):not(.data):not(.output):not(.decision):not(.result) rect,
+.wd-visual-v14 .mermaid .node:not(.accent):not(.input):not(.ai):not(.data):not(.output):not(.decision):not(.result) rect {
+  fill: #a6b0bc !important;
+}
+.wd-visual .mermaid .node.accent rect,
+.wd-visual-v14 .mermaid .node.accent rect,
+.wd-visual .mermaid .node.input rect,
+.wd-visual-v14 .mermaid .node.input rect {
+  fill: #4c8fd7 !important;
+}
+.wd-visual .mermaid .node.ai rect,
+.wd-visual-v14 .mermaid .node.ai rect {
+  fill: #9670cb !important;
+}
+.wd-visual .mermaid .node.data rect,
+.wd-visual-v14 .mermaid .node.data rect {
+  fill: #31a89b !important;
+}
+.wd-visual .mermaid .node.output rect,
+.wd-visual-v14 .mermaid .node.output rect,
+.wd-visual .mermaid .node.result rect,
+.wd-visual-v14 .mermaid .node.result rect {
+  fill: #67ae72 !important;
+}
+.wd-visual .mermaid .node.decision polygon,
+.wd-visual-v14 .mermaid .node.decision polygon,
+.wd-visual .mermaid .node.decision rect,
+.wd-visual-v14 .mermaid .node.decision rect {
+  fill: #daa044 !important;
+}
+.wd-visual .mermaid .node.result polygon,
+.wd-visual-v14 .mermaid .node.result polygon {
+  fill: #67ae72 !important;
+}
+
+/* Retain readable, quiet connectors without node outlines. */
+.wd-visual .mermaid .flowchart-link,
+.wd-visual-v14 .mermaid .flowchart-link {
+  stroke: #7a838e !important;
+  stroke-width: 1.2px !important;
+}
+.wd-visual .mermaid .edgeLabel,
+.wd-visual-v14 .mermaid .edgeLabel {
+  background: transparent !important;
+  color: #505862 !important;
+}
